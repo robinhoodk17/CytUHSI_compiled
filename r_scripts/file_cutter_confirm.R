@@ -1,10 +1,16 @@
-library(flowCore)
-library(tcltk)
-library(stringi)
-library(tidyverse)
-
-library(tidyFlowCore)
-
+tryCatch({
+  library(flowCore)
+  library(tcltk)
+  library(stringi)
+  library(tidyverse)
+  library(tidyFlowCore)
+},error = function(error){
+  install.packages("flowCore")
+  install.packages("tcltk")
+  install.packages("stringi")
+  install.packages("tidyverse")
+  install.packages("tidyFlowCore")
+})
 
 
 args <- commandArgs(trailingOnly = TRUE)

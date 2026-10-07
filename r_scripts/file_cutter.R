@@ -1,5 +1,10 @@
-library(flowCore)
-library(tcltk)
+tryCatch({
+  library(flowCore)
+  library(tcltk)
+},error = function(error){
+  install.packages("flowCore")
+  install.packages("tcltk")
+})
 
 
 #args[1] has the r_scripts. args[2] has the json scripts

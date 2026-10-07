@@ -1,4 +1,8 @@
-library(tcltk)
+tryCatch({
+  library(tcltk)
+},error = function(error){
+  install.packages("tcltk")
+})
 
 df <- read.csv(tk_choose.files(caption = "Select your csv file with the correct names. Empty names will delete the column"))
 sample_folder <- choose.dir(caption = "choose the folder with your samples They must be csv files")

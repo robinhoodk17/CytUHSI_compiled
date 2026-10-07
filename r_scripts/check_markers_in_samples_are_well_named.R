@@ -1,6 +1,13 @@
-library(tcltk)
-library(readxl)
-library(openxlsx)
+tryCatch({
+  library(tcltk)
+  library(readxl)
+  library(openxlsx)
+},error = function(error){
+  install.packages("tcltk")
+  install.packages("readxl")
+  install.packages("openxlsx")
+})
+
 
 #args[1] has the r_scripts. args[2] has the json scripts
 args <- commandArgs(trailingOnly = TRUE)
